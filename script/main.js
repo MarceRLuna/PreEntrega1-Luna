@@ -16,40 +16,45 @@ function areaCircunferencia(radio) {
     alert("El área de la circunferencia es: " + resultado + " m2");
 }
 
-//Variables, flujo de control y ciclo.
+//Variables: declaración e inicialización.
 
-let area = parseInt(prompt("Ingrese el nro. 1 - si quiere calcular área de un cuadrado, nro. 2 - para calcular el área de triángulo y nro. 3 - para calcular el área de una circunferencia"));
 let a = 0;
 let base = 0;
 let altura = 0;
 const PI = 3.1416;
 let radio = 0;
+let area;
 
-if (area > 0 && area < 4) {
+// Ciclo y flujo de control.
 
-    switch (area) {
-        case 1:
-            let a = parseFloat(prompt("Metros de uno de los lados?"));
-            areaCuadrado(a);
-            break;
-        case 2:
-            let base = parseFloat(prompt("Metros de la base del triángulo?"));
-            let altura = parseFloat(prompt("Metros de la altura del triángulo?"));
-            areaTriangulo(base, altura);
-            break;
-        case 3:
-            let radio = parseFloat(prompt("Metros del radio de la circunferencia?"));
-            areaCircunferencia(radio);
-            break;
+while (area != 0) {
     
-        default:
-            
-            break;
-    }
-    
-} else {
-    alert("El nro. y/o la palabra ingresada no representan una opción a elegir. Pulse F5 para recargar la página.")
+    area = parseInt(prompt("Ingrese el nro. 1 - si quiere calcular área de un cuadrado, nro. 2 - para calcular el área de triángulo y nro. 3 - para calcular el área de una circunferencia.  Para salir del programa ingrese el número 0."));
+
+    if (area > -1 && area < 4) {
+
+        switch (area) {
+            case 1:
+                let a = parseFloat(prompt("Metros de uno de los lados?"));
+                areaCuadrado(a);
+                break;
+            case 2:
+                let base = parseFloat(prompt("Metros de la base del triángulo?"));
+                let altura = parseFloat(prompt("Metros de la altura del triángulo?"));
+                areaTriangulo(base, altura);
+                break;
+            case 3:
+                let radio = parseFloat(prompt("Metros del radio de la circunferencia?"));
+                areaCircunferencia(radio);
+                break;
+
+            default:
+                break;
+        }
+
+    } else {
+        alert("El nro. y/o la palabra ingresada no representan una opción a elegir.")
+    }    
 }
-
 
 
